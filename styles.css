@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: "barlow-regular",san;
+}
+
+
+.contenedor {
+  position: relative;
+  width: 1086px;
+  margin: 10px auto;
+}
+.pie_de_pag {
+  display: block;
+  text-align:center;
+
+}
+
+.esp32_fkm {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Estilo para cada "pin" clicable */
+.pin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(215, 129, 106, 0.8);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.pin:hover {
+  transform: scale(1.5);
+}
+.esp32_icono {
+  width: 100px;
+  height: 100px;
+
+}
+.esp32_icono:hover {
+  transform: scale(1.2);
+}
