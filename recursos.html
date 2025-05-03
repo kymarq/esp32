@@ -2,80 +2,152 @@
 <html>
 	<head>
 		<meta lang="es" charset="UTF-8" name="keywords" content="web,html">
-		<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+		<link rel="icon" href="img/icono_esp32_nav.svg" type="image/svg">
 		<style>
-		body {
-		background-color: #93b5c6ff;
+		
+		html, body {
+			margin:0;
+			padding:0;
+			width:100%;
+			height:100%;
 		}
 		
 		.arriba-inicio {
-		  display: block;
-		  text-align: center;
-		  background-color: #93b5c6ff;
+			display:flex;  /* Cambiado a flex para alinear horizontalmente */
+			justify-content:center; /* Centra los elementos horizontalmente */
+			align-items:center; /* Centra verticalmente */
+			background-color:#93b5c6ff;
+			padding:10px;
 		}
 
 		.arriba-inicio img {
-		  width: 100px;
-		  height: 100px;
-		  margin: auto;
+			width:100px;
+			height:100px;
+			margin:auto;
+			cursor:pointer; /* Cambia el cursor al pasar sobre el icono */
 		}
 		
-		.arriba-inicio span {
-		color: black;
-		text-decoration: none;
-		font-weight: bold;
+		.arriba-inicio img:hover {
+			transform:scale(1.1);
+		}
+		
+		.titulo-inicio {
+			color: black;
+			text-decoration: none;
+			font-weight: bold;
+			cursor: default; /* Texto no clicable */
+			display:inline 40px; /* Opcional: para separar el texto del icono */
 		}
 
 		.div1 {
-		  display: block;
-		  align-items: center;
-		  background-color: white;
+			display: block;
+			align-items: center;
+			text-align:center;
+			margin-left: 500px;
+			margin-right: 500px;
+			height:60px;
+			background-color: white;
 		}	
 	
 		.div2 {
-		  display: block;
-		  align-items: center;
-		  margin-left: 500px;
-		  margin-right: 500px;
-		  background-color: white;
+			display: block;
+			align-items: center;
+			margin-left: 500px;
+			margin-right: 500px;
+			background-color: white;
 		}
+		.pie_pag {
+			display: block;
+			align-items: center;
+			margin-left: 500px;
+			margin-right: 500px;
+			height:60px;
+			background-color: white;
+			}	
+	
 		</style>
-		<title>Recursos y utilidades</title>
+		<title>GPIO 17: Recursos y Referencias</title>
 	</head>
 	
 	<body>
 	<div class="arriba-inicio">
+		<!-- Enlace SOLO en el icono (imagen) -->
 		<a href="index.html">
-		<img src="img/icono_ESP32.svg" class="arriba-inicio" title="Inicio">
-		<span>Inicio</span>
+		  <img src="img/icono_ESP32.svg" title="Inicio">
 		</a>
+		<!-- Texto "Inicio" SIN enlace -->
+		<span class="titulo-inicio">Inicio</span>
 	</div>
 	
 	<div class="div1">
+	<h1><b>Recursos utilizados y referencias</b></h1><br><br>
+	</div>
 	<div class="div2">
+		
 		<h2>Documentación de referencia para Micropython</h2>
-		<iframe id="miLista" src="https://docs.micropython.org/en/latest/esp32/quickref.html#" title="Micropython docs" height="500" width="900"></iframe>
-		<br><br><br><br>
+		<a href="https://docs.micropython.org/en/latest/esp32/quickref.html#" target="_blank">Micropython Documentación</a>
+		<br><br>
+		
 		<h2>Documentación de referencia para HTML</h2>
-		<a href="https://www.w3schools.com/Html/">W3schools. No permite webs incrustadas con iframe</a> 
-		<br><br><br><br>		
-		<h2>Documentación del distribuidor (Sunfounder) para los elementos del kit de iniciación</h2>
+		<a href="https://www.w3schools.com/Html/" target="_blank">W3schools</a> 
+		<br><br>	
+		
+		<h2>Documentación del distribuidor (Sunfounder) para los componentes del kit de iniciación</h2>
 		<p>Suficientemente detallado pero sencillo a la vez.<br>Permite entender rapidamente el funcionamiento y partes de cada elemento, conexión, posibles aplicaciones,etc.</p>
-		<br>
-		<iframe src="https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/components/component_list.html" title="Sunfounder elementos" height="500" width="900"></iframe>	
-		<br><br><br><br>
+		<a href="https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/components/component_list.html" target="_blank">Sunfounder componentes.</a>	
+		<br><br>
+		
 		<h2>Guía rápida de Micropython para 32 proyectos de iniciación</h2>
-		<br>
-		<p>Guía para cada uno de los 32 proyectos propuestos por el kit de iniciacion para aprender.<br>
+		<p>Guía para cada uno de los 32 proyectos propuestos por el kit de iniciacion para aprender.
 		De cada proyecto se incluye el codigo de Micropython, el esquema eléctrico y diagramas para visualizar el cableado de los componentes, pines, breadboard,etc.</p>
-		<br>
-		<iframe src="https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/micropython/for_micropython_user.html" title="Sunfounder elementos" height="500" width="900"></iframe>
-		<br><br><br><br>
+		<a href="https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/micropython/for_micropython_user.html" target="_blank">Sunfounder Micropython.</a>
+		<br><br>
+		
 		<h2>Thonny. Editor para desarrollo en Python</h2>
-		<p><a href="https://thonny.org/">Thonny</a> es el software recomendado por la propia Sunfounder para los proyectos de ESP32 en Micropython.<br>
-		Interfaz sencilla y limpia. En general resulta bastante mas agradable la configuración y el manejo en comparacion con IDLE o upycraft (demasiado rudimentarios)</p>
+		<p><a href="https://thonny.org/" target="_blank">Thonny</a> es el software recomendado por la propia Sunfounder para los proyectos de ESP32 en Micropython.
+		Interfaz sencilla y limpia. En general resulta bastante mas agradable la configuración y el manejo en comparacion con IDLE o upycraft.</p>
+		<br>
+		
+		<h2>Elemento circular de CSS</h2>
+		<p><a href="https://circletext.webflow.io/" target="_blank">Visto aquí.</a> Implementado en mi página de inicio para enlazar al resto de páginas desde los PINES del ESP32.</p>
+		<br>
+
+		<h2>Coolors.co: Generador de paletas de color</h2>
+		<p><a href="https://coolors.co/93b5c6-ddedaa-f0cf65-d7816a-bd4f6c" target="_blank">Paleta utilizada</a> para el fondo y los enlaces circulares.</p>
+		<br>
+		
+		<h2>Stack Overflow: Javascript</h2>
+		<p><a href="https://stackoverflow.com/questions/14984643/css-pick-a-random-color-from-array" target="_blank">Hilo</a> donde el usurario <b><i>bdesham</i></b> comparte una forma sencilla para generar colores aleatorios a partir de una lista en Javascript.<br>
+		Adaptado con mi paleta seleccionada para cambiar el color de fondo de la página index cada vez que se recarga la página.</p>
+		<br>
+		
+		<h2>Generador de coordenadas para image map</h2>
+		<p><a href="https://www.image-map.net/" target="_blank">Generador de coordenadas</a> para seleccionar el area de una imagen de manera rapida y obtener las coordenadas del image map.<br>
+		Usado en el index para crear el enlace con image map de la zona central de la imagen del ESP32.</p>
+		<br>
+		
+		<h2>Affinity Photo y Affinity Designer </h2>
+		<p><a href="https://affinity.serif.com/es/" target="_blank">AFFINITY</a> Software de Pago. La mejor alternativa sin suscripcion a los programas Adobe Photoshop/Adobe Illustator.<br>	
+		Utilizados para crear la imagen de fondo del index y el icono de ESP32 en formato svg para la pestaña del navegador y el boton para volver al inicio desde otra sección. 
+		</p>
+		<br>
+		
+		<h2>WOKWI </h2>
+		<p><a href="https://wokwi.com/esp32" target="_blank">WOKWI</a> Para simular el código antes de probarlo en la placa.</p>
+		<br>
+		
+		<h2>Micro REPL para Android</h2>
+		<p><a href="https://play.google.com/store/apps/details?id=micro.repl.ma7moud3ly&hl=es" target="_blank">Google Play Store</a> IDE para Micropython en Android. Instalando esta App en el móvil, se puede conectar directamente la placa ESP32 al móvil por medio del cable usb y subir scripts sin necesidad de PC.
+		</p>
+		<br>
+		
+		<h2>Deepseek AI</h2>
+		<p><a href="https://chat.deepseek.com/" target="_blank">Deepseek</a> Utilizado sobre todo para solucionar errores y ayudarme a maquetar/alinear elementos en el CSS de forma ordenada.
+		</p>
+		<br>
 		
 	</div>
+	<div class="pie_pag">
 	</div>
 	</body>
 </html>

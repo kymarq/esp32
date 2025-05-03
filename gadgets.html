@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta lang="es" charset="UTF-8" name="keywords" content="web,html">
+		<link rel="icon" href="img/icono_esp32_nav.svg" type="image/svg">
+		<style>
+		
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.arriba-inicio {
+			display: flex;  /* Cambiado a flex para alinear horizontalmente */
+			justify-content: center; /* Centra los elementos horizontalmente */
+			align-items: center; /* Centra verticalmente */
+			background-color: #F0CF65;
+			padding: 10px 0; /* Añade espacio arriba y abajo */
+		}
+
+		.arriba-inicio img {
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+		}
+		
+		.arriba-inicio img:hover {
+			transform:scale(1.1);
+		}
+		
+		.titulo-inicio {
+			color: black;
+			text-decoration: none;
+			font-weight: bold;
+			cursor: default; /* Texto no clicable */
+			display:inline; /* Opcional: para separar el texto del icono */
+		}
+
+		.div1 {
+			display: block;
+			align-items: center;
+			text-align:center;
+			margin-left: 500px;
+			margin-right: 500px;
+			height:60px;
+			background-color: white;
+		}	
+	
+		.div2 {
+			display: block;
+			align-items: center;
+			margin-left: 500px;
+			margin-right: 500px;
+			background-color: white;
+		}
+		.pie_pag {
+			display: block;
+			align-items: center;
+			margin-left: 500px;
+			margin-right: 500px;
+			height:60px;
+			background-color: white;
+		}	
+		.tabla1 {
+			text-align:left;
+		}
+		</style>
+		<title>GPIO 17: Gadgets</title>
+	</head>
+	
+	<body>
+	<div class="arriba-inicio">
+		<!-- Enlace SOLO en el icono (imagen) -->
+		<a href="index.html">
+		  <img src="img/icono_ESP32.svg" title="Inicio">
+		</a>
+		<!-- Texto "Inicio" SIN enlace -->
+		<span class="titulo-inicio">Inicio</span>
+	</div>
+	
+	<div class="div1">
+	<h1><b>Gadgets ESP32</b></h1>
+	</div>
+	<div class="div2">
+	<p>Aquí recopilo otros productos, todos ellos basados en el microcontrolador ESP32, bastante interesantes y asequibles<P>
+		<table class="tabla1" cellpadding="2px" cellspacing="1px" border="1px">
+		<tr>
+			<th>Producto</th>
+			<th>Placa</th>
+			<th>Fabricante</th>
+			<th>Descripción</th>
+			<th>Características</th>
+			<th>Foto</th>
+		</tr>
+		
+		<tr>
+			<td><a href="https://shop.m5stack.com/products/m5stack-cardputer-with-m5stamps3-v1-1" target="_blank">Cardputer</a></td>
+			<td>ESP32-S3</td>
+			<td>M5Stack</td>
+			<td>Mini "ordenador" del tamaño de una tarjeta de credito</td>
+			<td>Pantalla, teclado, micrófono, altavoz, GPIO, sensores IR, Wifi 2,4Ghz, Bluetooth. Puede funcionar como teclado Bluetooth</td>
+			<td><img src="https://shop.m5stack.com/cdn/shop/files/K132_v11_12_1200x1200.webp?v=1741328850" width="160px" height="160px"></td>
+		</tr>
+
+
+		<tr>
+			<td><a href="https://shop.m5stack.com/products/m5stamp-plc-controller-with-m5stamps3" target="_blank">M5stamp PLC</a></td>
+			<td>ESP32-S3</td>
+			<td>M5Stack</td>
+			<td>Mini PLC</td>
+			<td>Pantalla, módulo RTC(Real Time Clock),8 entradas digitales, 4 salidas a Relé AC/DC, sensores de corriente y voltaje, sensor de temperatura, bocina integrada</td>
+			<td><img src="https://shop.m5stack.com/cdn/shop/files/3_be10bc16-c1d0-4f2a-8a1e-4347e30b222f_1200x1200.webp?v=1742538792" width="160px" height="160px"></td>
+		</tr>
+		
+		<tr>
+			<td><a href="https://shop.m5stack.com/products/air-quality-kit-w-m5stamps3-sen55-scd40" target="_blank">Air Quality Kit</a></td>
+			<td>ESP32-S3</td>
+			<td>M5Stack</td>
+			<td>Mini estación de calidad de aire</td>
+			<td>Pantalla de tinta electrónica de muy bajo consumo, sensores de CO2, particulas en el aire, temperatura, humedad, puede conectarse a internet y a un movil para manejo en remoto a través de app</td>
+			<td><img src="https://shop.m5stack.com/cdn/shop/files/3_4de22f47-d55e-4e7a-8299-a8aec8762ecc_1200x1200.webp?v=1704436396" width="160px" height="160px"></td>
+		</tr>
+		
+		<tr>
+			<td><a href="https://lilygo.cc/products/t-embed-cc1101" target="_blank">T-Embed-cc1101</a></td>
+			<td>ESP32-S3</td>
+			<td>Lilygo</td>
+			<td>Dispositivo para Pentesting</td>
+			<td>Similar al infame Flipper Zero. Permite testear la seguridad de redes/dispositivos propios o infiltrarse en redes/dispositivos ajenos</td>
+			<td><img src="https://lilygo.cc/cdn/shop/files/T-Embed-CC1101-lilygo_4.jpg?v=1727250195&width=1946" width="160px" height="160px"></td>
+		</tr>
+		
+		<tr>
+			<td><a href="https://norvi.lk/products-2/" target="_blank">PLC / HMI</a></td>
+			<td>ESP32 WROOM</td>
+			<td>NORVI</td>
+			<td>Varios modelos de PLC basados en ESP32</td>
+			<td>Depende del modelo</td>
+			<td><img src="https://norvi.lk/wp-content/uploads/2021/04/20-scaled.jpg" width="160px" height="160px"></td>
+		</tr>
+		
+
+		</table>
+	</div>
+	<div class="pie_pag">
+	</div>
+	</body>
+</html>
