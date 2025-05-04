@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta lang="es" charset="UTF-8" name="keywords" content="web,html">
+		<link rel="icon" href="img/icono_esp32_nav.svg" type="image/svg">
+		<style>
+		
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.arriba-inicio {
+			display: flex;  /* Cambiado a flex para alinear horizontalmente */
+			justify-content: center; /* Centra los elementos horizontalmente */
+			align-items: center; /* Centra verticalmente */
+			background-color: #BD4F6C;
+			padding: 10px 0; /* Añade espacio arriba y abajo */
+		}
+
+		.arriba-inicio img {
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+		}
+		
+		.arriba-inicio img:hover {
+			transform:scale(1.1);
+		}
+		
+		.titulo-inicio {
+			color: black;
+			text-decoration: none;
+			font-weight: bold;
+			cursor: default; /* Texto no clicable */
+			display:inline; /* Opcional: para separar el texto del icono */
+		}
+
+		.div1 {
+			display: block;
+			align-items: center;
+			text-align:left;
+			margin-left: 500px;
+			margin-right: 500px;
+			background-color: white;
+		}	
+	
+		.div2 {
+			display: block;
+			align-items: center;
+			margin-left: 500px;
+			margin-right: 500px;
+			background-color: white;
+		}
+		.pie_pag {
+			display: block;
+			align-items: center;
+			margin-left: 500px;
+			margin-right: 500px;
+			height:60px;
+			background-color: white;
+		}	
+		.tabla1 {
+			text-align:left;
+		}
+		</style>
+		<title>GPIO 17: Gadgets</title>
+	</head>
+	
+	<body>
+	<div class="arriba-inicio">
+		<!-- Enlace SOLO en el icono (imagen) -->
+		<a href="index.html">
+		  <img src="img/icono_ESP32.svg" title="Inicio">
+		</a>
+		<!-- Texto "Inicio" SIN enlace -->
+		<span class="titulo-inicio">Inicio</span>
+	</div>
+	
+	<div class="div1">
+	<h1><b>main.py - SEMÁFORO</b></h1>
+	<p>El proyecto elegido para realizar con el microcontrolador es un sistema de semáforo con 4 <a href="https://docs.micropython.org/en/v1.15/wipy/tutorial/timer.html" target=_blank">temporizadores</a><br>
+	Para ello adquirí un <a href="https://www.sunfounder.com/products/sunfounder-esp32-ultimate-starter-kit-with-esp32-camera-extension-board-battery" target="_blank">kit de iniciación de ESP32</a> que incluye multitud de componentes:
+	<ul>
+		<li>resistencias</li>
+		<li>condensadores</li>
+		<li>transistores</li>
+		<li>sensores</li>
+		<li>actuadores</li>
+		<li>leds, etc.</li> </p>
+	<br>
+	<h2>Video del proyecto</h2>
+	<video src="video\VID_20250504_193659.mp4" width="960px" height="540px" controls></video>
+	
+	<h2>Diagrama aproximado (pines GPIO en distinta ubicacion en la placa que usa Wokwi)</h2>
+	<img src="img\wokwi_diag.png" width="960>
+	</div>
+	
+	<div class="div2">
+	<h2>Componentes utilizados</h2>
+		<table class="tabla1" width="960px" cellpadding="2px" cellspacing="1px" border="1px">
+		
+		<tr>
+			<th>Componente</th>
+			<th>Cantidad</th>
+
+		</tr>
+		
+		<tr>
+			<td>ESP32 WROOM 32E</td>
+			<td>1</td>
+		</tr>
+
+
+		<tr>
+			<td>Camera Extension para cableado rápido</td>
+			<td>1</td>
+		</tr>
+		
+		<tr>
+			<td><a href="https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/components/component_i2c_lcd.html" target="_blank">Pantalla LCD 1602 I2C<br></a> Es necesario <a href="https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/micropython/python_start/upload_libraries.html#add-libraries-py" target="_blank">cargar las librerias</a> a la placa</td>
+			<td>1</td>
+		</tr>
+		
+		<tr>
+			<td>Breadboard</td>
+			<td>1</td>
+		</tr>
+		
+		<tr>
+			<td>LED Rojo</td>
+			<td>2</td>
+		</tr>
+		
+		<tr>
+			<td>LED Verde</td>
+			<td>2</td>
+		</tr>
+		
+		<tr>
+			<td>LED Amarillo</td>
+			<td>1</td>
+		</tr>
+		
+		<tr>
+			<td>Resistencias 220 ohmios</td>
+			<td>5</td>
+		</tr>
+
+		<tr>
+			<td>Pulsador (Pushdown)</td>
+			<td>1</td>
+		</tr>
+
+		<tr>
+			<td>Cables (jumper wire)</td>
+			<td>18</td>
+		</tr>
+		
+		</table>
+		<h2>Funcionamiento</h2>
+		<p>El funcionamiento es similar a una práctica de semáforo que tuvimos que programar para la asignatura de Sistemas Secuenciales Programables, utilizando diagramas GRAFCET y Ladder para TIA PORTAL V17.<br><br>
+		<h3>Secuencia:</h3>
+		<ol>
+			<li>Con el sistema en estado inicial, se enciende la luz VERDE para coches y la luz ROJA para peatones.</li>
+			<li>Pasados 4s tras pulsar el pulsador <b>S1</b>, se enciende la luz ÁMBAR para coches y se apaga la VERDE. Para los peatones seguirá en ROJO.</li>
+			<li>Pasados 4s, la luz ÁMBAR funcionará de manera INTERMITENTE.Para los peatones seguirá en ROJO.</li>
+			<li>Pasado un tiempo establecido, se enciende la luz ROJA para coches y se encenderá la luz VERDE para peatones.</li>
+			<li>Pasado un tiempo establecido, la luz VERDE para peatones funcionará de manera intermitente. para coches seguirá en ROJO.</li>
+			<li>Pasado un tiempo establecido, el sistema vuelva a su estado inicial.</li>
+		</ol>
+		</p>
+	</div>
+	<div class="pie_pag">
+	</div>
+	</body>
+</html>
